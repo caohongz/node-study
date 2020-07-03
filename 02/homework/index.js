@@ -1,6 +1,6 @@
 // 暗号：排序
 module.exports.compose = (middlewares) => {
-  return function () {
+  return async function () {
     return dispatch(0);
     function dispatch(i) {
       const fn = middlewares[i];
