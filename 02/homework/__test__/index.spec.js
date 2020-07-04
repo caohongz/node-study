@@ -1,26 +1,20 @@
-// 暗号：排序
-test("练习02 中间件实现", () => {
-  const mockFn = jest.fn();
+const test = require("../test-case");
+describe("Koa 递归实现", () => {
+  const { compose } = require("../koa");
+  test(compose);
+});
 
-  const middlewares = [
-    async (next) => {
-      mockFn("1 start");
-      next();
-      mockFn("1 end");
-    },
-    async (next) => {
-      mockFn("2 start");
-      next();
-      mockFn("2 end");
-    },
-  ];
-  const { compose } = require("../index");
-  compose(middlewares)();
+describe("Redux reduce实现", () => {
+  const { compose } = require("../redux/reduce");
+  test(compose);
+});
 
-  const calls = mockFn.mock.calls;
-  expect(calls.length).toBe(4);
-  expect(calls[0][0]).toBe("1 start");
-  expect(calls[1][0]).toBe("2 start");
-  expect(calls[2][0]).toBe("2 end");
-  expect(calls[3][0]).toBe("1 end");
+describe("Redux reduceRight实现", () => {
+  const { compose } = require("../redux/reduceRight.js");
+  test(compose);
+});
+
+describe("Redux reduceRight Promise实现", () => {
+  const { compose } = require("../redux/reducePromise");
+  test(compose);
 });
