@@ -6,24 +6,25 @@ module.exports = (compose) => {
     const middlewares = [
       (next) => {
         mockFn("1 start");
-        // console.log("1", mockFn.mock.calls);
+        console.log("1", mockFn.mock.calls);
 
         next();
-        // console.log("2", mockFn.mock.calls);
+        console.log("2", mockFn.mock.calls);
 
         mockFn("1 end");
       },
       (next) => {
         mockFn("2 start");
-        // console.log("3", mockFn.mock.calls);
+        console.log("3", mockFn.mock.calls);
 
         next();
-        // console.log("4", mockFn.mock.calls);
+        console.log("4", mockFn.mock.calls);
 
         mockFn("2 end");
       },
     ];
     compose(middlewares)();
+    // console.log("test", callss.resolve());
 
     const calls = mockFn.mock.calls;
     expect(calls.length).toBe(4);
