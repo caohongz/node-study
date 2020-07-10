@@ -13,6 +13,8 @@
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^9.1.0",
     "koa-static": "^5.0.0",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.22",
     "mysql": "^2.18.1"
   },
   "devDependencies": {},
