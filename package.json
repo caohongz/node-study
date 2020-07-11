@@ -13,22 +13,13 @@
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^9.1.0",
     "koa-static": "^5.0.0",
-<<<<<<< HEAD
+
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.22",
-=======
-<<<<<<< HEAD
-    "mongodb": "^3.5.9",
-    "mongoose": "^5.9.22",
-    "mysql": "^2.18.1"
-=======
->>>>>>> 42e88e21f12424cbb8dcc1c5b470e4b56b8b1645
     "mysql": "^2.18.1",
     "mysql2": "^2.1.0",
     "sequelize": "^6.3.0",
-    "sqlite": "^4.0.11",
     "sqlite3": "^5.0.0"
->>>>>>> 7daa60be2b3595d949943853f6b83a1d17ca7826
   },
   "devDependencies": {},
   "scripts": {
