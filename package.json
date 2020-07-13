@@ -6,14 +6,16 @@
   "dependencies": {
     "axios": "^0.19.2",
     "body-parse": "^0.1.0",
+    "co-redis": "^2.1.1",
     "express": "^4.17.1",
     "g": "^2.0.1",
     "http-proxy-middleware": "^1.0.4",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
+    "koa-redis": "^4.0.1",
     "koa-router": "^9.1.0",
+    "koa-session": "^6.0.0",
     "koa-static": "^5.0.0",
-
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.22",
     "mysql": "^2.18.1",
