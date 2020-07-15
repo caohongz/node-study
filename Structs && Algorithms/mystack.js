@@ -88,10 +88,10 @@ function cal1(arr) {
     } else {
       while (
         !stack.isEmpty() &&
-        ["+", "-", "*", "/"].indexOf(item) >= 0 &&
+        ["+", "_", "*", "/"].indexOf(item) >= 0 &&
         priority[stack.top()] >= priority[item]
       ) {
-        postfix_lst.push(stack.pop());
+        postfix_lst.push(stack.top());
       }
       stack.push(item);
     }
@@ -101,5 +101,6 @@ function cal1(arr) {
   }
   return postfix_lst;
 }
-// console.log(cal1(["4", "+", "13", "/", "5"]));
-console.log(cal1(["(", "4", "+", "13", ")", "/", "5"]));
+
+console.log(cal1(["4", "+", "13", "/", "5"]));
+console.log(cal1(["(", "4", "+", "5", "*", "13", ")", "/", "5"]));
