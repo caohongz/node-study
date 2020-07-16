@@ -104,3 +104,5 @@ function cal1(arr) {
 
 console.log(cal1(["4", "+", "13", "/", "5"]));
 console.log(cal1(["(", "4", "+", "5", "*", "13", ")", "/", "5"]));
+
+module.exports = Stack;
