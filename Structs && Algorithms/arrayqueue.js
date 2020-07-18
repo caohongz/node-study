@@ -108,29 +108,61 @@ function tringle(n) {
 // maze_array[2][1] ------- maze_array[3][5]
 
 function mazeFinder(array) {
-  var maze_array = [
-    [0, 0, 1, 0, 0, 0, 0],
-    [0, 0, 1, 1, 0, 0, 0],
-    [0, 0, 0, 0, 1, 0, 0],
-    [0, 0, 0, 1, 1, 0, 0],
-    [1, 0, 0, 0, 1, 0, 0],
-    [1, 1, 1, 0, 0, 0, 0],
-    [1, 1, 1, 0, 0, 0, 0],
-  ];
-  var maze_array_bak = maze_array.slice();
-  maze_array[array[0]][array[1]] = 98;
-  maze_array[array[2]][array[3]] = 99;
+  // maze_array[array[0]][array[1]] = 98;
+  // maze_array[array[2]][array[3]] = 99;
   let x = array[0];
   let y = array[1];
   const Stack = require("./mystack");
   let stack = new Stack();
-  while (x >= 0 && x <= 6 && y >= 0 && y <= 6) {
-    let left = maze_array[x - 1][y];
-    let right = maze_array[x - 1][y];
-    let top = maze_array[x - 1][y];
-    let bottom = maze_array[x - 1][y];
-    if (left !== 1) {
-      stack.push(left);
-    }
-  }
+  let maze_array = mazesearch(x, y, 1);
+  console.log(maze_array);
 }
+
+function mazesearch(x, y, step) {
+  var maze_array = [
+    [0, 0, -1, 0, 0, 0, 0],
+    [0, 0, -1, -1, 0, 0, 0],
+    [0, 0, 0, 0, -1, 0, 0],
+    [0, 0, 0, -1, -1, 0, 0],
+    [-1, 0, 0, 0, -1, 0, 0],
+    [-1, -1, -1, 0, 0, 0, 0],
+    [-1, -1, -1, 0, 0, 0, 0],
+  ];
+  var maze_array_bak = maze_array.slice();
+  // console.log(maze_array_bak[x - 1]);
+  let left = (right = top = bottom = -1);
+  // let left = -1;
+  // let right = -1;
+  // let top = -1;
+  // let bottom = -1;
+  if (x - 1 >= 0 && y >= 0) {
+    left = maze_array_bak[x - 1][y];
+  }
+  if (x + 1 >= 0 && y >= 0) {
+    right = maze_array_bak[x + 1][y];
+  }
+  if (x >= 0 && y - 1 >= 0) {
+    left = maze_array_bak[x][y - 1];
+  }
+  if (x >= 0 && y + 1 >= 0) {
+    left = maze_array_bak[x][y + 1];
+  }
+  if (left !== -1 && left !== step) {
+    left = step;
+    mazesearch(x - 1, y, step + 1);
+  } else if (right !== -1 && right !== step) {
+    right = step;
+    mazesearch(x + 1, y, step + 1);
+  } else if (top !== -1 && top !== step) {
+    top = step;
+    mazesearch(x, y - 1, step + 1);
+  } else if (bottom !== -1 && bottom !== step) {
+    bottom = step;
+    mazesearch(x, y + 1, step + 1);
+  }
+  console.log("var", left, right, top, bottom);
+
+  return maze_array_bak;
+}
+
+mazeFinder([0, 1]);
