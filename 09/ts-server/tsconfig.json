@@ -7,8 +7,14 @@
     "moduleResolution": "node", // 模块解决策略
     "experimentalDecorators": true, // 开启装饰器定义
     "allowSyntheticDefaultImports": true, // 允许es6方式import
-    "lib": ["es2015"],
-    "typeRoots": ["./node_modules/@types"]
+    "lib": [
+      "es2015"
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ]
   },
-  "include": ["src/**/*"]
+  "include": [
+    "src/**/*"
+  ]
 }
