@@ -11,7 +11,7 @@ test("练习09 实现装饰器模式", () => {
   const log = new Log();
   expect(log.print("Start")).toBe("[[Start]]");
 });
-// 暗号：贪心算法
+// 暗号：回溯算法
 test("练习09 实现装饰器工厂", () => {
   class Log {
     print(msg) {

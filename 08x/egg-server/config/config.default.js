@@ -35,11 +35,11 @@ module.exports = (appInfo) => {
   };
 
   config.mongoose = {
-    url: "mongodb://192.168.31.243:27017/caohongz",
+    url: "mongodb://127.0.0.1:27017/caohongz",
     options: {
-      auth: { authSource: "admin" },
-      user: "admin",
-      pass: "123456",
+      // auth: { authSource: "admin" },
+      // user: "admin",
+      // pass: "123456",
       // useMongoClient: true,
       autoReconnect: true,
       reconnectTries: Number.MAX_VALUE,
